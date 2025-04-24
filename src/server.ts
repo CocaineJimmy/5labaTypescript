@@ -1,6 +1,6 @@
 // src/server.ts
 import express from 'express';
-import { config } from './config';
+import { PORT } from './common/config';
 import abiturientRouter from './abiturient.router';
 import examRouter from './exam.router';
 import teacherRouter from './teacher.router';
@@ -17,6 +17,6 @@ app.use((req, res) => {
   res.status(404).json({ message: 'Not Found' });
 });
 
-app.listen(config.port, () => {
-  console.log(`Server is running on port ${config.port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
